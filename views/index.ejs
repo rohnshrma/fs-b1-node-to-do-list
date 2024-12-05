@@ -38,9 +38,23 @@
     </div>
 
     <div id="main" class="wrapper">
-        <%= items%>
+        <% if(typeof items===typeof []){ %>
+            <% items.forEach(function(item,index){ %>
+                <div class="item">
+                    <h2>
+                        <%= item %>
+                    </h2>
+                    <a href="delete/<%=index %>" class="btn btn-link"><i class="fa-solid fa-trash delete-icon"></i></a>
+                </div>
+                <% }) %>
+                    <% }else{ %>
+                        <h2>No Items Found</h2>
+                        <% } %>
     </div>
 
+
+
+    <script src="/script.js"></script>
 </body>
 
 </html>

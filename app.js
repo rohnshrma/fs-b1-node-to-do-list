@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
-const items = [];
+var items = [];
 
 // middleware
 app.use(express.static("public"));
@@ -31,6 +31,15 @@ app
     console.log("Items =>", items);
     res.redirect("/");
   });
+
+app.route("/delete/:id").get(function (req, res) {
+  var id = parseInt(req.params.id);
+  items = items.filter(function (item, index) {
+    console.log(index, id, index !== id);
+    return index !== id;
+  });
+  res.redirect("/");
+});
 
 // server setup
 app.listen(port, function () {

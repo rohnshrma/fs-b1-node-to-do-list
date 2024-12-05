@@ -21,3 +21,24 @@ body {
 
   margin: 4rem auto;
 }
+
+#main {
+  margin: auto;
+  width: 40%;
+}
+.item {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+.item i {
+  font-size: 1.5rem;
+  color: rgb(148, 64, 64);
+  text-shadow: -2px 2px 0 #000;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
